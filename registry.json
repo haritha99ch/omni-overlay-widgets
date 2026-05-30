@@ -8,6 +8,42 @@
       "author": "haritha99ch",
       "iconFallback": "brand-discord",
       "lastUpdated": "2026-05-30T00:00:00Z"
+    },
+    {
+      "id": "obs",
+      "name": "OBS",
+      "description": "OBS Studio controls - recording, streaming and replay buffer via WebSocket.",
+      "version": "0.1.0",
+      "author": "haritha99ch",
+      "iconFallback": "video",
+      "lastUpdated": "2026-05-30T00:00:00Z"
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "description": "Steam friends list with chat, rich presence and game invites via Steamworks SDK.",
+      "version": "0.1.0",
+      "author": "haritha99ch",
+      "iconFallback": "brand-steam",
+      "lastUpdated": "2026-05-30T00:00:00Z"
+    },
+    {
+      "id": "audio",
+      "name": "Audio",
+      "description": "System audio controls - output/input volume, per-app streams and device selector.",
+      "version": "0.1.0",
+      "author": "haritha99ch",
+      "iconFallback": "volume",
+      "lastUpdated": "2026-05-30T00:00:00Z"
+    },
+    {
+      "id": "performance",
+      "name": "Performance",
+      "description": "System performance monitor - CPU, GPU, RAM, network graphs and load averages.",
+      "version": "0.1.0",
+      "author": "haritha99ch",
+      "iconFallback": "device-analytics",
+      "lastUpdated": "2026-05-30T00:00:00Z"
     }
   ]
 }
