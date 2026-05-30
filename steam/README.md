@@ -8,19 +8,21 @@ Unlike Discord (local IPC socket) or OBS (WebSocket server), Steam exposes no TC
 
 The workaround: the widget bridges through the **Steamworks SDK** by loading `libsteam_api.so` directly via Python `ctypes`. This fakes being a game (using AppID 480 — Spacewar, Valve's SDK test app) to trick Steam into handing over an API context. From there it can read friends lists, rich presence and receive chat messages.
 
-This approach has several problems:
+## Known issues
 
-- Steam must be running and logged in
-- Steam may show a "Spacewar" game session in your activity while the widget is open
-- `libsteam_api.so` must be present on the system (comes with the Steam Linux runtime)
-- The ctypes bindings are fragile — any Steamworks SDK update can silently break them
-- No official support, no guarantees, could stop working at any time
+- **You will appear to be playing Spacewar** while the widget is open. This is visible to all your Steam friends.
+- **`steam_appid.txt` is written to the scripts folder** on every launch and stays on disk. This can confuse other Steam integrations that scan for it.
+- **`libsteam_api.so` path is hardcoded** to `~/.local/share/Steam/steamrt64/libsteam_api.so`. Breaks on Flatpak installs, non-default Steam paths, or if Valve changes the runtime layout.
+- **Chat history is stored inside the plugin folder.** It gets wiped on plugin reinstall or update.
+- **Events are polled, not pushed.** `SteamAPI_RunCallbacks` is called every 10 seconds. Messages, persona state changes and game invites can be missed or delayed between polls.
+- **`SteamAPI_InitFlat` may not exist** on older Steam installs. It was added in a specific SDK version — earlier versions will fail silently or crash.
+- **Any Steamworks SDK update can break the ctypes bindings** with no warning. There is no versioning or compatibility guarantee.
 
 ## Requirements
 
 - Steam installed and running
-- `libsteam_api.so` available (usually at `~/.steam/sdk64/libsteam_api.so` or inside the Steam Linux runtime)
+- `libsteam_api.so` present at `~/.local/share/Steam/steamrt64/libsteam_api.so`
 
 ## Notes
 
-If Steam exposes a proper local API in the future this widget will be rewritten. Until then, it is what it is.
+If Steam ever exposes a proper local API this widget will be rewritten properly. Until then, it is what it is.
