@@ -1,0 +1,13 @@
+{
+  "widgets": [
+    {
+      "id": "discord",
+      "name": "Discord",
+      "description": "Discord voice overlay with mute/deafen controls, channel browser, speaking indicators and avatars.",
+      "version": "0.1.0",
+      "author": "haritha99ch",
+      "iconFallback": "brand-discord",
+      "lastUpdated": "2026-05-30T00:00:00Z"
+    }
+  ]
+}
