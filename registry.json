@@ -19,15 +19,6 @@
       "lastUpdated": "2026-05-30T00:00:00Z"
     },
     {
-      "id": "steam",
-      "name": "Steam",
-      "description": "Steam friends list with chat, rich presence and game invites via Steamworks SDK.",
-      "version": "0.1.0",
-      "author": "haritha99ch",
-      "iconFallback": "brand-steam",
-      "lastUpdated": "2026-05-30T00:00:00Z"
-    },
-    {
       "id": "audio",
       "name": "Audio",
       "description": "System audio controls - output/input volume, per-app streams and device selector.",
