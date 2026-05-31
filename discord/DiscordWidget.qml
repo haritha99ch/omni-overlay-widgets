@@ -140,7 +140,8 @@ Item {
       case "VOICE_STATE_CREATE": {
         var p = _makeParticipant(d);
         if (p.id === discordUserId) { discordSelfMuted = p.mute; discordSelfDeafened = p.deaf; }
-        voiceParticipants = voiceParticipants.concat([p]);
+        if (!voiceParticipants.some(function(x){ return x.id === p.id; }))
+          voiceParticipants = voiceParticipants.concat([p]);
         break;
       }
       case "VOICE_STATE_UPDATE": {
