@@ -68,7 +68,7 @@ Item {
     id: bridge
     running: false
     stdinEnabled: true
-    command: root.pluginApi ? ["python3", root.pluginApi.pluginDir + "/scripts/discord-ipc.py"] : ["true"]
+    command: root.pluginApi ? ["python3", root.pluginApi.pluginDir + "/widgets/discord/scripts/discord-ipc.py"] : ["true"]
     stdout: SplitParser {
       onRead: function(line) {
         if (!line.trim()) return;

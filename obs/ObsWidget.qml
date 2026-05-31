@@ -37,7 +37,7 @@ Item {
     id: obsBridge
     running: false
     stdinEnabled: true
-    command: [root.pluginApi ? root.pluginApi.pluginDir + "/scripts/obs-ws.py" : "true"]
+    command: [root.pluginApi ? root.pluginApi.pluginDir + "/widgets/obs/scripts/obs-ws.py" : "true"]
     stdout: SplitParser {
       onRead: function(line) {
         if (!line.trim()) return;
