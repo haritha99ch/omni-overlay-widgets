@@ -287,7 +287,7 @@ Item {
             TextField {
               id: clientIdField; Layout.fillWidth: true
               placeholderText: "000000000000000000"
-              placeholderTextColor: Color.mSecondary
+              placeholderTextColor: Qt.alpha(Color.mOnSurfaceVariant, 0.6)
               font.pointSize: Style.fontSizeXS; color: Color.mOnSurface
               background: Rectangle { color: Color.mSurface; border.color: Color.mOutline; border.width: 1; radius: Style.radiusS }
             }
@@ -298,7 +298,7 @@ Item {
             TextField {
               id: clientSecretField; Layout.fillWidth: true
               placeholderText: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-              placeholderTextColor: Color.mSecondary
+              placeholderTextColor: Qt.alpha(Color.mOnSurfaceVariant, 0.6)
               echoMode: TextInput.Password
               font.pointSize: Style.fontSizeXS; color: Color.mOnSurface
               background: Rectangle { color: Color.mSurface; border.color: Color.mOutline; border.width: 1; radius: Style.radiusS }
